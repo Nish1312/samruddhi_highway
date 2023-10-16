@@ -21,3 +21,5 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_HIGHWAY_2DAA1 }}'
           channelId: live
           projectId: highway-2daa1
+        env:
+          FIREBASE_CLI_EXPERIMENTS: webframeworks
