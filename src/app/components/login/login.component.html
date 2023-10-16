@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row mt-5">
+        <div class="col"></div>
+        <div class="col-4">
+            <div class="card shadow">
+                <div class="card-body">
+                    <form>
+                        <h4 class="text-dark text-muted">
+                            Login
+                        </h4>
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <label for="inputEmail3" class="form-label">Email</label>
+                                <input type="email" class="form-control" name="email" [(ngModel)]="email" />
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-12">
+                                <label for="inputPassword3" class="form-label">Password</label>
+                                <input type="password" class="form-control" name="password" [(ngModel)]="password" />
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" (click)="login()">Sign in</button>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <a href="/register" style="text-decoration: none;">Need Account ? <span
+                                        class="text-danger">Register</span></a>
+                            </div>
+                            <div class="col-md-6">
+                                <a href="/forgot-password" class="text-dark" style="text-decoration: none;"> Forgot
+                                    Password ? </a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

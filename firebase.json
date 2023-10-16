@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "highway",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

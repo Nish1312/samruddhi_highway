@@ -1,0 +1,93 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="modal modal-xl fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Explore Category</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="title" placeholder="name@example.com"
+                                    [(ngModel)]="title">
+                                <label for="title">Title</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <select class="form-select" id="icon" [(ngModel)]="icon">
+                                    <option value="" selected>Select Icon</option>
+                                    <option value="rule">rule</option>
+                                    <option value="toll">toll</option>
+                                    <option value="women">women</option>
+                                    <option value="local_police">local_police</option>
+                                    <option value="medical_services">medical_services</option>
+                                    <option value="fire_truck">fire_truck</option>
+                                </select>
+                                <label for="icon">Icon</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <label for="icon">Data</label>
+                            <div class="form mb-3">
+                                <angular-editor [placeholder]="'Enter text here...'" [(ngModel)]="htmlData"
+                                    [config]="config"></angular-editor>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="addExplore()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-md-10 mt-5">
+            <div class="row">
+                <div class="col">
+                    <h5 class="text-denger">Explore Category List</h5>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary m-1 float-end" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Add Category
+                    </button>
+                </div>
+            </div>
+
+            <div class="card p-3 shadow">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Title</th>
+                                <th scope="col">Icon</th>
+                                <th scope="col">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let stop of exploreList">
+                                <td>{{stop.title}}</td>
+                                <td>{{stop.icon}}</td>
+                                <td>
+                                    <button class="btn btn-outline-danger" (click)="deleteExplore(stop)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

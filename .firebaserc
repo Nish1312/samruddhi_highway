@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "highway-2daa1": {
+      "hosting": {
+        "highway": [
+          "highway-2daa1"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "highway-2daa1"
+  }
+}
