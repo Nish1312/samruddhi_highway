@@ -6,10 +6,16 @@ export interface Stop {
   is_city: boolean;
   step: number;
   files: Array<FileData>;
+  stops: Array<StopData>;
 }
 
 export class FileData {
   name: string = '';
   size: number = 0;
   url: string = '';
+}
+
+export class StopData {
+  id: number = 0;
+  title: string = '';
 }

@@ -27,6 +27,8 @@ import { AngularFireStorageModule } from '@angular/fire/compat/storage';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { provideFunctions,getFunctions } from '@angular/fire/functions';
+import { ChalanComponent } from './components/chalan/chalan.component';
+import { ManageChalanComponent } from './components/manage-chalan/manage-chalan.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { provideFunctions,getFunctions } from '@angular/fire/functions';
     ManageExploreComponent,
     ManageStopComponent,
     FileuploadComponent,
+    ChalanComponent,
+    ManageChalanComponent,
   ],
   imports: [
     BrowserModule,

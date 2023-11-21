@@ -1,0 +1,107 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="modal modal-xl fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Chalan Category</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="title"
+                                    placeholder="Name of offence in English" [(ngModel)]="offence_en">
+                                <label for="title">Offience Name (EN)</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="title"
+                                    placeholder="Name of offence in English" [(ngModel)]="offence_mr">
+                                <label for="title">Offience Name (MR)</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="title"
+                                    placeholder="Name of offence in English" [(ngModel)]="offence_section">
+                                <label for="title">Offience Section</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="title"
+                                    placeholder="Name of offence in English" [(ngModel)]="fine_1">
+                                <label for="title">1st Fine</label>
+                            </div>
+                        </div>
+                        <div class="col-md">
+                            <div class="form-floating mb-3">
+                                <input type="text" class="form-control" id="title"
+                                    placeholder="Name of offence in English" [(ngModel)]="fine_2">
+                                <label for="title">2nd Fine and Onwards</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" (click)="addChalan()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-md-10 mt-5">
+            <div class="row">
+                <div class="col">
+                    <h5 class="text-denger">Fine List</h5>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary m-1 float-end" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Add Fine
+                    </button>
+                </div>
+            </div>
+
+            <div class="card p-3 shadow">
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Offence (EN)</th>
+                                <th scope="col">Offence (MR)</th>
+                                <th scope="col">Offence Section</th>
+                                <th scope="col">Fine 1</th>
+                                <th scope="col">Fine 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let chalan of chalanList">
+                                <td>{{chalan.offence_en}}</td>
+                                <td>{{chalan.offence_mr}}</td>
+                                <td>{{chalan.offence_section}}</td>
+                                <td>{{chalan.fine_1}}</td>
+                                <td>{{chalan.fine_2}}</td>
+                                <td>
+                                    <button class="btn btn-outline-danger"
+                                        (click)="deleteChalan(chalan)">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col"></div>
+    </div>
+</div>

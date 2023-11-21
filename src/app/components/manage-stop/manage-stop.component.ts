@@ -15,12 +15,14 @@ import { finalize } from 'rxjs/operators';
 export class ManageStopComponent {
   stopList: Stop[] = [];
   imageManager = [];
+  stopsDataManager = [];
   stopObj: Stop = {
     id: '',
     name: '',
     is_city: false,
     step: 0,
     files: [],
+    stops: [],
   };
   id: string = '';
   name: string = '';
@@ -140,5 +142,13 @@ export class ManageStopComponent {
 
   removeImage(i) {
     this.imageManager.splice(i, 1);
+  }
+
+  addStops() {
+    this.stopsDataManager.push(0);
+  }
+
+  removeStops(i) {
+    this.stopsDataManager.splice(i, 1);
   }
 }

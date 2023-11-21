@@ -30,6 +30,15 @@
                 </div>
 
                 <div *ngIf="!is_city">
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control" id="step" placeholder="name@example.com"
+                                    [(ngModel)]="step">
+                                <label for="step">Short Description</label>
+                            </div>
+                        </div>
+                    </div>
                     <div class="card border-0 shadow m-3" *ngFor="let count of imageManager; let i = index">
                         <div class="card-body">
                             <div>

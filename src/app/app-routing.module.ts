@@ -9,6 +9,7 @@ import { ManageStopComponent } from './components/manage-stop/manage-stop.compon
 import { ManageExploreComponent } from './components/manage-explore/manage-explore.component';
 import { ManageHelplineComponent } from './components/manage-helpline/manage-helpline.component';
 import { FileuploadComponent } from './components/fileupload/fileupload.component';
+import { ManageChalanComponent } from './components/manage-chalan/manage-chalan.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'dashboard/manage-stops', component: ManageStopComponent },
   { path: 'dashboard/manage-explore', component: ManageExploreComponent },
   { path: 'dashboard/manage-helpline', component: ManageHelplineComponent },
+  { path: 'dashboard/manage-chalan', component: ManageChalanComponent },
 ];
 
 @NgModule({

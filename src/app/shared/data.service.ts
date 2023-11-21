@@ -3,6 +3,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
 import { Stop } from '../model/stop';
 import { Explore } from '../model/explore';
 import { Helpline } from '../model/helpline';
+import { Chalan } from '../model/chalan';
 
 @Injectable({
   providedIn: 'root',
@@ -28,8 +29,7 @@ export class DataService {
   }
 
   updateStop(stop: Stop) {
-    this.deleteStop(stop);
-    this.addStop(stop);
+    return this.afs.doc('/cities/' + stop.id).update(stop);
   }
 
   //Explore CRUD
@@ -72,5 +72,25 @@ export class DataService {
   updateHelpline(helpline: Helpline) {
     this.deleteHelpline(helpline);
     this.addHelpline(helpline);
+  }
+
+  //Chalan CRUD
+
+  addChalan(chalan: Chalan) {
+    chalan.id = this.afs.createId();
+    return this.afs.collection('/chalan').add(chalan);
+  }
+
+  getAllChalans() {
+    return this.afs.collection('/chalan').snapshotChanges();
+  }
+
+  deleteChalan(chalan: Chalan) {
+    return this.afs.doc('/chalan/' + chalan.id).delete();
+  }
+
+  updateChalan(chalan: Chalan) {
+    this.deleteChalan(chalan);
+    this.addChalan(chalan);
   }
 }
